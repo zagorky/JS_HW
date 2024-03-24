@@ -9,21 +9,24 @@
 
 let dateToday = new Date();
 let checkDay = function(day)  {
-    let week = [
-        'вс',
-        'пн', 
-        'вт',
-        'ср',
-        'чт',
-        'пт',
-        'сб',
+    let week = 
+    [
+        'воскресенье',
+        'понедельник', 
+        'вторник',
+        'среда',
+        'четверг',
+        'пятница',
+        'суббота'
     ];
     let curr = week[day.getDay()];
-    let prev = week[day.getDay() - 1];
-    let next = week[day.getDay() + 1];
-return  {'Curr' : curr ,
-        'Prev' : prev ,
-        'Next' : next ,}
+    let prev = week[day.getDay()+6];
+    let next = week[day.getDay()+1];
+return  {
+         'Curr' : curr ,
+         'Prev' : prev ,
+         'Next' : next ,
+        }
 }
 days = checkDay(dateToday);
 console.log(days);
