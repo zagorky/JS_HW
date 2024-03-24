@@ -1,18 +1,7 @@
 // Выведите на экран на какие дни недели выпадают в 
 // этом году официальные государственные праздники
 
-function thisYear() {
-    let today = new Date();
-    let day = today.getDate();
-    let month = today.getMonth.()+1;
-    return {day: day, month: month};
-}
-function checkHoliday(today){
- for ( let i=0; i < holiday.length; i++)
- if (holiday[i].day == today.day && holiday[i].month == today.month )
- return i;
-}
-let days = [
+let week = [
     'вс',
     'пн',
     'вт',
@@ -20,40 +9,65 @@ let days = [
     'чт',
     'пт',
     'сб'
+];
+let month = [
+    'января',
+    'февраля',
+    'марта',
+    'апреля',
+    'мая',
+    'июня',
+    'июля',
+    'августа',
+    'сентября',
+    'октября',
+    'ноября',
+    'декабря',
 ]
  
 let holiday = [
     {   day: 7, 
-        month: 1, 
-        desc: 'Рождество'
+        month: 0, 
     } ,
     {   day: 23, 
-        month: 2, 
-        desc: 'День защитника отечества'
+        month: 1, 
     } ,
     {   day: 8, 
-        month: 3, 
-        desc: 'Международный женский день'
+        month: 2, 
     } ,
     {   day: 1, 
-        month: 5, 
-        desc: 'Первомай'
+        month: 4, 
     } ,
     {   day: 9, 
-        month: 5, 
-        desc: 'День Победы'
+        month: 4, 
     } ,
     {   day: 12, 
         month: 6, 
-        desc: 'День России'
     } ,
     {   day: 4, 
-        month: 11, 
-        desc: 'День народного единства'
+        month: 10, 
     } ,
     {   day: 31, 
-        month: 12, 
-        desc: 'Новый год'} 
+        month: 11, 
+    } 
 ];
 
+function getArrDayOff(holiday) { //+
+    let arrHoliday = []; //+
+
+    for ( day of holiday) //+
+    {
+        let days = Object.values(day); //+
+        let date = new Date(); //+
+        let holidays = new Date(date.getFullYear(),days[1], days[0] ); //+
+        arrHoliday.push(holidays.getDay()); //+
+    }
+    return arrHoliday; //+
+}
+let arrHoliday = getArrDayOff(holiday); //+
+arrHoliday.forEach(function(el,ind){ //+
+    let string = `${holiday[ind].day} ${month[holiday[ind].month]} это ${week[el]}`;
+    
+    return console.log(string);
+})
 
