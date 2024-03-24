@@ -16,7 +16,7 @@ let checkDay = function(day)  {
         'ср',
         'чт',
         'пт',
-        'сб'
+        'сб',
     ];
     let curr = week[day.getDay()];
     let prev = week[day.getDay() - 1];
