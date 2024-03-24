@@ -23,8 +23,8 @@ let checkDay = function(day)  {
     let prev = week[day.getDay()+6];
     let next = week[day.getDay()+1];
 return  {
-         'Curr' : curr ,
          'Prev' : prev ,
+         'Curr' : curr ,
          'Next' : next ,
         }
 }
