@@ -20,8 +20,16 @@ let checkDay = function(day)  {
         'суббота'
     ];
     let curr = week[day.getDay()];
-    let prev = week[day.getDay()+6];
-    let next = week[day.getDay()+1];
+    let prev;
+    if (day.getDay() == 0) 
+    prev = week[day.getDay() + 6];
+    else 
+     prev = week[day.getDay() - 1];
+    let next;
+    if (day.getDay() == 6)
+    next = week[day.getDay() - 6];
+    else
+    next = week[day.getDay() + 1];
 return  {
          'Prev' : prev ,
          'Curr' : curr ,
