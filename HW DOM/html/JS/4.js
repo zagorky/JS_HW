@@ -25,7 +25,7 @@ function createImg(){
         let p = document.createElement("p");
         document.body.append(p);
         let img = document.createElement("img");
-        img.setAttribute("src", `/img/${i}.jpg`);
+        img.setAttribute("src", `img/${i}.jpg`);
         document.body.append(img);
     }
 }
