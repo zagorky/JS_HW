@@ -22,8 +22,8 @@ document.querySelector(".reset").onclick = function(){
 function createImg(){
     for(let i=1; i<6; i++)
     {
-        let p = document.createElement("p");
-        document.body.append(p);
+        let div = document.createElement("div");
+        document.body.append(div);
         let img = document.createElement("img");
         img.setAttribute("src", `img/${i}.jpg`);
         document.body.append(img);
@@ -31,10 +31,10 @@ function createImg(){
 }
 function deleteImg(){
     let img = document.querySelectorAll("img");
-    let p = document.querySelectorAll("p");
+    let div = document.querySelectorAll("div");
 
     for(let i = 0; i<5; i++){
-        p[i].remove();
+        div[i].remove();
         img[i].remove();
     }
 }
