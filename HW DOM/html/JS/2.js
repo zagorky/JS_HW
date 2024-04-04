@@ -15,5 +15,5 @@ document.querySelector(".forward").onclick = function (){
         loadImg (count);
     }
     function loadImg(count){
-        document.querySelector("img").src=`img/${count}.jpg`;
+        document.querySelector("img").src=`./img/${count}.jpg`;
     }
