@@ -1,0 +1,9 @@
+.card{
+    background: cornflowerblue;
+    font-size: 2rem;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    align-items:center;
+    border-radius: 20%;
+}
