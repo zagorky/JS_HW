@@ -3,7 +3,7 @@
 // воскресенья. В воскресенье - фон белый. В 
 // блоке должно быть размещено сообщение, сколько 
 // дней осталось до воскресенья.
-let dateToday = new Date(2024,3,6);
+let dateToday = new Date();
 function getColor(day){
     if (day.getDay() == 0) return 'ffffff';
     else if(day.getDay() == 1) return 'ffdb58';
