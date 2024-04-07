@@ -7,7 +7,7 @@
 let backColor = document.getElementById("backColor"); // на всякий случай
 let textColor = document.getElementById("textColor"); // на всякий случай
 
-// притягиваю определенные html элементы к переменным
+// притягиваю определенные html элементы к переменным, на всякий случай
 
 let textGreen = document.getElementById("textGreen"); 
 let textBrown = document.getElementById("textBrown");
@@ -17,31 +17,40 @@ let backYellow = document.getElementById("backYellow");
 let backBlue = document.getElementById("backBlue");
 
 
-//Я пытаюсь сделать? чтобы при нажатии на определенную радио-кнопку
-//(якобы эта кнопка при выборе ее возвращает тру)
-// возвращался определенный цвет
+//пытаюсь сделать так , чтобы при нажатии на определенную радио-кнопку
+// возвращался определенный цвет и применялся к стилю страницы
 
-function getTextColor(){
-    if (Boolean(textGreen) == true) return `#89BFC5`;
-    else if (Boolean(textBrown) == true)  return `#6E6739`;
-    else if (Boolean(textPurple) == true) return `#9A3BBC`;
-}
-function getBackColor(){
-    if (Boolean(backPink) == true) return `#7C467B`;
-    else if (Boolean(backYellow) == true) return `#D2CBA5`;
-    else if (Boolean(backBlue) == true) return `#799CE4`;
-}
+//пытаюсь поменять цвет текста
+let radio1 = document.querySelectorAll(`input[name="rad1"]`); 
+let button = document.getElementsByClassName(".btn btn-primary");
+button.addEventListener('click', function(){
+    for ( let rad1 of radio1){
+        if (rad1.checked){
+            if (document.getElementById("textGreen") === rad1.checked)
+            return document.querySelector(".coloredItem").style.color = `#89BFC5`;
+            else if(document.getElementById("textBrown") === rad1.checked)
+            return document.querySelector(".coloredItem").style.color = `#6E6739`;
+            else if(document.getElementById("textPurple") === rad1.checked)
+            return document.querySelector(".coloredItem").style.color = `#9A3BBC`;
+        }
+    }
+});
 
-// пытаюсь сделать чтобы на клик на кнопку "применить"
-// применялись новые цвета к фону и тексту
+//пытаюсь поменять цвет фона
 
-window.onload = function() {
-    let button = document.getElementsByClassName(".btn btn-primary");
-    let text = document.getElementsByClassName(".coloredItem");
-    let body = document.getElementsByTagName('body')[0];
-    button.onclick = function() {
-        body.style.backgroundColor = getBackColor();
-        text.style.color = getTextColor();
-    };
-};
+let radio2 = document.querySelectorAll(`input[name="rad2"]`);
+button = document.getElementsByClassName(".btn btn-primary");
+button.addEventListener('click', function(){
+    for ( let rad2 of radio1){
+        if (rad2.checked){
+            if (document.getElementById("backPink") === rad2.checked)
+            return document.body.style.backgroundColor = `#7C467B`;
+            else if(document.getElementById("backYellow") === rad2.checked)
+            return document.body.style.backgroundColor = `#D2CBA5`;
+            else if(document.getElementById("backBlue") === rad2.checked)
+            return document.body.style.backgroundColor = `#799CE4`;
+        }
+    }
+});
 
+//ничего не работает из за модального окна?
