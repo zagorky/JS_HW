@@ -40,7 +40,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Применить</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="changeColors()">Применить</button>
         </div>
       </div>
     </div>
@@ -49,20 +49,27 @@
    <script>
         
  //меняю цвет текста       
-let colorText = document.getElementById("textColor");
-colorText.addEventListener("input", function(){changeTextColor(colorText) });
-let p = document.querySelector("p");
-function changeTextColor(colorText) {
-    p.style.color = colorText.value;
-}
+// let colorText = document.getElementById("textColor");
+// colorText.addEventListener("input", function(){changeTextColor(colorText) });
+// let p = document.querySelector("p");
+// function changeTextColor(colorText) {
+//     p.style.color = colorText.value;
+// }
 
 
 //меняю цвет фона
-let colorBack = document.getElementById("backColor");
-colorBack.addEventListener("input" , function(){changeBackColor(colorBack)});
-function changeBackColor(colorBack) {
-    document.body.style.backgroundColor = colorBack.value;
+// let colorBack = document.getElementById("backColor");
+// colorBack.addEventListener("input" , function(){changeBackColor(colorBack)});
+// function changeBackColor(colorBack) {
+//     document.body.style.backgroundColor = colorBack.value;
+// }
+
+function changeColors(){
+document.getElementById("textColor")
+document.querySelector(".coloredItem").style.color = document.getElementById("textColor").value;
+document.body.style.backgroundColor = document.getElementById("backColor").value;
 }
+
 </script>
 </body>
 </html>
