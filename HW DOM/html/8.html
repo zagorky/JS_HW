@@ -30,15 +30,11 @@
         </div>
         <div class="modal-body">
             <label for="textColor">Цвет текста</label></br>
-            <input type="radio" name="rad1" id="textGreen" value="89BFC5"> Зеленый</br>
-            <input type="radio" name="rad1" id="textBrown" value ="6E6739"> Коричневый</br>
-            <input type="radio" name="rad1" id="textPurple" value="9A3BBC"> Фиолетовый</br>
+            <input type="color" name="textColor" id="textColor" value="#7C467B"> </br>
 
 
             <label for="backColor">Цвет фона</label></br>
-            <input type="radio" name="rad2" id="backPink" value="7C467B"> Розовый</br>
-            <input type="radio" name="rad2" id="backYellow" value="D2CBA5"> Желтый</br>
-            <input type="radio" name="rad2" id="backBlue" value="799CE4"> Голубой</br>
+            <input type="color" name="backColor" id="backColor" value="#D2CBA5"></br>
 
 
         </div>
@@ -49,16 +45,24 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-    
-
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
-   <script src="./JS/8.js"></script>
+   <script>
+        
+ //меняю цвет текста       
+let colorText = document.getElementById("textColor");
+colorText.addEventListener("input", function(){changeTextColor(colorText) });
+let p = document.querySelector("p");
+function changeTextColor(colorText) {
+    p.style.color = colorText.value;
+}
+
+
+//меняю цвет фона
+let colorBack = document.getElementById("backColor");
+colorBack.addEventListener("input" , function(){changeBackColor(colorBack)});
+function changeBackColor(colorBack) {
+    document.body.style.backgroundColor = colorBack.value;
+}
+</script>
 </body>
 </html>
