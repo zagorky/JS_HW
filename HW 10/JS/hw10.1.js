@@ -23,19 +23,23 @@
 
 // пришлось немного переделать код с пары, так как 
 // там не менялись артикулы, везде был артикул (100)
-// теперь здесь нет замыкания(
 
-let categories = ['pc', 'notebooks', 'monitors']  
-categories.forEach(function(elem) 
+
+function createLinkItem(cat){
+    return function(art){
+         return `https://myshop.ru/${cat}/${art}`
+    }
+} 
+let categories = ['pc', 'notebooks', 'monitors']; 
+let art = ['1001','4004','345'];
+
+categories.forEach(function(elem, index) 
 {
-    if (elem === 'pc') art = '1001';
-    else if (elem === 'notebooks') art = '4004';
-    else if ( elem === 'monitors') art = '345'
     let a = document.createElement('a');
-    a.setAttribute("href", `https://myshop.ru/${elem}/${art}`);
+    a.setAttribute("href", createLinkItem(elem)(art[index]));
     a.textContent = elem;
     document.body.append(a);
     let p = document.createElement('p');
     document.body.append(p);
 })
-   
+ 
