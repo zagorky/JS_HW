@@ -1,0 +1,25 @@
+#catalog{
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px
+
+  }
+  
+  .prod{
+    background-color: antiquewhite;
+    text-align: center;
+  }
+  button{
+    border-radius: 10px;
+    background-color: cornflowerblue;
+    font-size: medium;
+  }
+  img{
+    width: 244px;
+    height: 244px;
+  }

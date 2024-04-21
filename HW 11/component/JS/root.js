@@ -1,0 +1,1 @@
+export let ROOT_ITEM = document.getElementById("catalog");
