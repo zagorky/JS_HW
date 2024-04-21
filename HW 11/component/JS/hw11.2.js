@@ -14,8 +14,8 @@ class Items {
             htmlCatalog += 
             `
             <div class="prod">
+            <img src="./component/img/${imgSrc}.jpg"><br>  
             <span>Название: ${nameTovar}</span><br>
-            <img scr="https://github.com/zagorky/JS_HW/blob/main/HW%2011/component/img/${imgSrc}.jpg"/><br> 
             <span>Цвет курпуса: ${corpus}</span><br>
             <span>Цвет ремешка: ${remen}</span><br>
             <span>Размер дисплея: ${displaySize}</span><br>
